@@ -20,9 +20,26 @@ namespace MohammedKarim_S00199627
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Game> AllGames;
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void lbxGames_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Game selectedGame = lbxGames.SelectedItem as Game;
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            GameData db = new GameData();
+            var query = from p in db.Games
+                        select p;
+
+            AllGames = query.ToList();
+
+            lbxGames.ItemsSource = AllGames;
         }
     }
 }

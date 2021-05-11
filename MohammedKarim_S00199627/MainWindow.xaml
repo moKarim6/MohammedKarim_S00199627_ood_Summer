@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MohammedKarim_S00199627"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Window.Resources>
+        <DataTemplate x:Key="listboxTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="{Binding GameImage}"/>
+                <TextBlock Margin="5" Text="{Binding Name}" VerticalAlignment="Center"/>
+                <TextBlock Margin="5" Text="{Binding Score}"/>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="25*"/>
+            <ColumnDefinition Width="35*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="1"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <ListBox ItemTemplate="{StaticResource ResourceKey=listboxTemplate}" x:Name="lbxGames" HorizontalAlignment="Left" Height="247" Margin="110,76,0,0" VerticalAlignment="Top" Width="225" SelectionChanged="lbxGames_SelectionChanged" />
+        <Image x:Name="imgGame" HorizontalAlignment="Left" Height="176" Margin="455,147,0,0" VerticalAlignment="Top" Width="165"/>
+        <TextBlock x:Name="tblkGameDetails" HorizontalAlignment="Left" Margin="455,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="52" Width="165" FontSize="24"/>
     </Grid>
 </Window>

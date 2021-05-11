@@ -11,14 +11,14 @@ namespace UnitTestProject1
         public void TestPrice()
         {
             // ARRANGE
-            Game g1 = new Game("Mario", 85, "Arcade", "Nintendo", 50m);
+            Game game1 = new Game("Mario", 85, "Arcade", "Nintendo", 50m);
             decimal finalprice = 0m;
 
             // ACT
-            g1.DecreasePrice(50m);
+            game1.DecreasePrice(50m);
 
             // ASSERT
-            Assert.AreEqual(finalprice, g1.Price);
+            Assert.AreEqual(finalprice, game1.Price);
         }
     }
 }

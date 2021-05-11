@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace MohammedKarim_S00199627
 {
@@ -40,6 +41,12 @@ namespace MohammedKarim_S00199627
         {
             Price -= amount;
         }
+    }
+
+    public class GameData : DbContext
+    {
+        public GameData() : base("Game Information") { }
+        public DbSet<Game> Games { get; set; }
     }
 
   

@@ -29,6 +29,12 @@ namespace MohammedKarim_S00199627
         private void lbxGames_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Game selectedGame = lbxGames.SelectedItem as Game;
+
+            if (selectedGame != null)
+            {
+                imgGame.Source = new BitmapImage(new Uri(selectedGame.GameImage, UriKind.Relative));
+                tblkGameDetails.Text = $"{selectedGame.Price:C}";
+            }
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

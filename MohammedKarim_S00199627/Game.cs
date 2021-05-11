@@ -35,6 +35,11 @@ namespace MohammedKarim_S00199627
         {
             return Name;
         }
+
+        public void DecreasePrice(decimal amount)
+        {
+            Price -= amount;
+        }
     }
 
   

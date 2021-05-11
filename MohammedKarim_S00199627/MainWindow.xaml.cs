@@ -33,7 +33,7 @@ namespace MohammedKarim_S00199627
             if (selectedGame != null)
             {
                 imgGame.Source = new BitmapImage(new Uri(selectedGame.GameImage, UriKind.Relative));
-                tblkGameDetails.Text = $"{selectedGame.Price:C}";
+                tblkGameDetails.Text = $"{selectedGame.Description}";
             }
         }
 
